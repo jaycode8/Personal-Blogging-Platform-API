@@ -1,2 +1,3 @@
 blogapi_venv
 .env
+db.sqlite3
