@@ -1,11 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
 from uuid import uuid4
 from datetime import datetime
 
 # Create your models here.
 
-class Author(AbstractBaseUser):
+class Author(models.Model):
     id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     first_name = models.CharField(max_length=255)
     middle_name = models.CharField(max_length=255, null=True, blank=True)
