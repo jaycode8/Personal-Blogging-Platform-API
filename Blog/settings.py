@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 
     # custom apps
     "apps.authors",
-    "apps.articles"
+    "apps.articles",
 ]
 
 MIDDLEWARE = [
