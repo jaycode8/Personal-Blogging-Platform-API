@@ -1,0 +1,34 @@
+[
+    {
+        "title": "The AI Revolution: A Glimpse into the Future",
+        "content": "Artificial intelligence is reshaping industries, from healthcare to finance. Experts believe that by 2035, AI will surpass human capabilities in many fields...",
+        "author": "authors[0]",
+        "tags": ["AI", "Machine Learning", "Future Tech"]
+    },
+    {
+        "title": "Breaking Down the 2025 Stock Market Boom",
+        "content": "The S&P 500 has surged by 20% this year, fueled by advancements in technology and investor optimism. But is this a bubble or sustainable growth?",
+        "author": "authors[1]",
+        "tags": ["Stock Market", "Finance", "Investing"]
+    },
+    {
+        "title": "Quantum Computing: The Dawn of a New Era",
+        "content": "Quantum computers could revolutionize problem-solving in areas like cryptography, materials science, and artificial intelligence...",
+        "author": "authors[0]",
+        "tags": ["Quantum Computing", "Tech", "Innovation"]
+    },
+    {
+        "title": "Mars Colony 2030: Are We Ready?",
+        "content": "With SpaceX and NASA working towards human settlement on Mars, questions arise about the feasibility, risks, and long-term sustainability...",
+        "author": "authors[1]",
+        "tags": ["Space Exploration", "NASA", "Mars"]
+    },
+    {
+        "title": "The Rise of Decentralized Finance (DeFi)",
+        "content": "DeFi is transforming traditional banking, offering peer-to-peer financial services without intermediaries. However, regulatory challenges remain...",
+        "author": "authors[0]",
+        "tags": ["DeFi", "Blockchain", "Crypto"]
+    }
+]
+
+

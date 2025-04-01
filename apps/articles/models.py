@@ -1,8 +1,8 @@
 from django.db import models
 from uuid import uuid4
 from django.utils import timezone
-from django.contrib.auth.models import User
 from apps.authors.models import Author 
+from django.contrib.postgres.fields import ArrayField
 
 
 class Article(models.Model):
@@ -11,7 +11,8 @@ class Article(models.Model):
     content = models.TextField()
     date = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    tags = models.JSONField(null=True)
+    tags = ArrayField(models.CharField(max_length=200), default=list, blank=True)
+    
 
     class Meta:
         db_table = "article"
