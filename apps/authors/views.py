@@ -2,9 +2,13 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.generics import RetrieveDestroyAPIView
 from .serializers import AuthorSerializer
 from .models import Author
 
+class AuthorAPIView(RetrieveDestroyAPIView):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
 
 @api_view(["GET", "POST"])
 def author_list(request):
