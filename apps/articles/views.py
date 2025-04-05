@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView, UpdateAPIView
 from .models import Article
 from .serializers import ArticleSerializer
@@ -25,6 +24,17 @@ def articles_detail(request, id):
     
     if request.method == 'GET':
         serializer = ArticleSerializer(article)
-        return JsonResponse(serializer.data)
-
+        return Response(serializer.data)
+    
+    elif request.method == 'PUT':
+        serializer = ArticleSerializer(article, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    elif request.method == 'DELETE':
+        article.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
 

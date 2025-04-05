@@ -11,8 +11,8 @@ class Article(models.Model):
     content = models.TextField()
     date = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    tags = ArrayField(models.CharField(max_length=200), default=list, blank=True)
-    # tags = models.JSONField()
+    # tags = ArrayField(models.CharField(max_length=200), default=list, blank=True)
+    tags = models.JSONField()
     
 
     class Meta:
