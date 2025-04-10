@@ -13,7 +13,8 @@ class Article(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     # tags = ArrayField(models.CharField(max_length=200), default=list, blank=True)
     tags = models.JSONField()
-    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = "article"
