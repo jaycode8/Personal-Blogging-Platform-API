@@ -1,3 +1,4 @@
+from django.utils.timezone import now
 from rest_framework.generics import ListCreateAPIView, UpdateAPIView
 from .models import Article
 from .serializers import ArticleSerializer
@@ -14,6 +15,12 @@ class UpdateArticle(UpdateAPIView):
 class ListCreateArticle(ListCreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
+
+    def get(self, request, *args, **kwargs):
+        month = request.GET.get("month", now().month)
+        year = now().year
+        articles = Article.objects.filter(created_at__month=month, created_at__year=year).values()
+        return Response(articles)
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def articles_detail(request, id):
